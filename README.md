@@ -10,7 +10,7 @@ code to publish all your draft videos without clicking using javascript.
 2. FOR EDUCATIONAL PURPOSES ONLY
 
 ## Instructions:
-1. go to YouTube Studio's "Content"  page
-2. go to developer console after 'crtl + shift+ i'
-3. paste the entire content of youtube-publish-drafts.js file
-4. press 'enter'
+1. Go to YouTube Studio's "Content"  page
+2. Go to developer console after 'crtl + shift+ i'
+3. Paste the entire content of youtube-publish-drafts.js file
+4. Press 'enter'
