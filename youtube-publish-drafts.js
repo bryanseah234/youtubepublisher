@@ -86,21 +86,23 @@
     const SAVE_BUTTON_SELECTOR = '#done-button';
     const SUCCESS_ELEMENT_SELECTOR = 'ytcp-video-thumbnail-with-info';
     const DIALOG_SELECTOR = 'ytcp-dialog.ytcp-video-share-dialog > paper-dialog:nth-child(1)';
-    // const DIALOG_CLOSE_BUTTON_SELECTOR = 'iron-icon';
-    const DIALOG_CLOSE_BUTTON_SELECTOR = 'close-button';
+    const DIALOG_CLOSE_BUTTON_SELECTOR = '#iron-button:nth-child(1)';
+    // const DIALOG_CLOSE_BUTTON_SELECTOR = 'div.label.style-scope.ytcp-button';
 
+    
     class SuccessDialog {
         constructor(raw) {
             this.raw = raw;
         }
 
         async closeDialogButton() {
-            return await waitForElement(DIALOG_CLOSE_BUTTON_SELECTOR, this.raw);
+             return await waitForElement(DIALOG_CLOSE_BUTTON_SELECTOR, this.raw);
         }
 
         async close() {
             click(await this.closeDialogButton());
-            await sleep(50);
+            // click(await document.getElementById('close-button'));
+            await sleep(5);
             debugLog('closed');
         }
     }
@@ -123,7 +125,7 @@
         async setVisibility() {
             click(await this.visibilityRadioButton());
             debugLog(`visibility set to ${VISIBILITY}`);
-            await sleep(50);
+            await sleep(20);
         }
 
         async saveButton() {
@@ -317,4 +319,3 @@
 
 
 })();
-
