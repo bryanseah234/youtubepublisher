@@ -8,6 +8,7 @@ code to publish all your draft videos without clicking using javascript.
 ## Disclaimer:
 1. USE AT OWN DISCRETION
 2. FOR EDUCATIONAL PURPOSES ONLY
+3. NOT CURRENTLY STABLE
 
 ## Instructions:
 1. Go to YouTube Studio's "Content"  page
