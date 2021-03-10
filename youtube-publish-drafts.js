@@ -85,8 +85,9 @@
     const VISIBILITY_PAPER_BUTTONS_SELECTOR = 'paper-radio-group';
     const SAVE_BUTTON_SELECTOR = '#done-button';
     const SUCCESS_ELEMENT_SELECTOR = 'ytcp-video-thumbnail-with-info';
-    const DIALOG_SELECTOR = 'ytcp-dialog.ytcp-video-share-dialog > paper-dialog:nth-child(1)';
-    const DIALOG_CLOSE_BUTTON_SELECTOR = '#iron-button:nth-child(1)';
+    // const DIALOG_SELECTOR = 'ytcp-dialog.ytcp-video-share-dialog > paper-dialog:nth-child(1)';
+    const DIALOG_SELECTOR = 'ytcp-dialog.ytcp-video-share-dialog > tp-yt-paper-dialog:nth-child(1)';
+    const DIALOG_CLOSE_BUTTON_SELECTOR = '#iron-button';
     // const DIALOG_CLOSE_BUTTON_SELECTOR = 'div.label.style-scope.ytcp-button';
 
     
