@@ -1,0 +1,28 @@
+# .github/labels.yml
+# Example configuration for the labeler action
+
+documentation:
+  - 'docs/**/*'
+  - '*.md'
+
+backend:
+  - 'src/server/**/*'
+  - 'backend/**/*'
+
+frontend:
+  - 'src/client/**/*'
+  - 'frontend/**/*'
+  - 'ui/**/*'
+
+tests:
+  - '**/__tests__/**/*'
+  - 'tests/**/*'
+  - 'spec/**/*'
+
+bug:
+  - 'fix/*'
+  - 'bug/*'
+
+enhancement:
+  - 'feat/*'
+  - 'feature/*'

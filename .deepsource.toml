@@ -1,9 +1,76 @@
+# .deepsource.toml (Place this in your source repo)
 version = 1
+
+# Enable all core analyzers provided by DeepSource
+[[analyzers]]
+name = "python"
+enabled = true
 
 [[analyzers]]
 name = "javascript"
 enabled = true
 
-[[transformers]]
-name = "standardjs"
+[[analyzers]]
+name = "go"
 enabled = true
+
+[[analyzers]]
+name = "java"
+enabled = true
+
+[[analyzers]]
+name = "csharp"
+enabled = true
+
+[[analyzers]]
+name = "ruby"
+enabled = true
+
+[[analyzers]]
+name = "rust"
+enabled = true
+
+[[analyzers]]
+name = "kotlin"
+enabled = true
+
+[[analyzers]]
+name = "swift"
+enabled = true
+
+[[analyzers]]
+name = "scala"
+enabled = true
+
+[[analyzers]]
+name = "php"
+enabled = true
+
+[[analyzers]]
+name = "ansible"
+enabled = true
+
+[[analyzers]]
+name = "docker"
+enabled = true
+
+[[analyzers]]
+name = "terraform"
+enabled = true
+
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+[[analyzers]]
+name = "shell"
+enabled = true
+
+[[analyzers]]
+name = "sql"
+enabled = true
+
+# You can also enable transformers (code formatters) if desired
+# [[transformers]]
+# name = "black"
+# enabled = true

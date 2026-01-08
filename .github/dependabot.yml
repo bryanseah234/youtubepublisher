@@ -1,0 +1,109 @@
+version: 2
+updates:
+  # .NET SDK (global.json file)
+  - package-ecosystem: "dotnet-sdk"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Bun (bun.lockb, package.json files)
+  - package-ecosystem: "bun"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Bundler (Gemfile, Gemfile.lock files)
+  - package-ecosystem: "bundler"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Cargo (Cargo.toml, Cargo.lock files)
+  - package-ecosystem: "cargo"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Composer (composer.json, composer.lock files)
+  - package-ecosystem: "composer"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Conda (environment.yml file)
+  - package-ecosystem: "conda"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+      
+  # Dev containers (.devcontainer.json file)
+  - package-ecosystem: "devcontainers"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Docker (Dockerfile)
+  - package-ecosystem: "docker"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+      
+  # Docker Compose (docker-compose.yml file)
+  - package-ecosystem: "docker-compose"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # GitHub Actions workflows (.github/workflows/*.yml files)
+  - package-ecosystem: "github-actions"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Go modules (go.mod file)
+  - package-ecosystem: "gomod"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Gradle (build.gradle, build.gradle.kts files)
+  - package-ecosystem: "gradle"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Helm (Chart.yaml, values.yaml files)
+  - package-ecosystem: "helm"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Maven (pom.xml file)
+  - package-ecosystem: "maven"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # npm (package.json, package-lock.json files)
+  - package-ecosystem: "npm"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # NuGet (.nuspec, .csproj, etc. files)
+  - package-ecosystem: "nuget"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # pip (requirements.txt, Pipfile, setup.py files)
+  - package-ecosystem: "pip"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+
+  # Terraform (.tf files)
+  - package-ecosystem: "terraform"
+    directory: "/" 
+    schedule:
+      interval: "daily"

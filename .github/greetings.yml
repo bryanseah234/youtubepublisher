@@ -1,0 +1,36 @@
+# .github/greetings.yml
+# A comprehensive configuration for the actions/first-interaction action
+
+repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+# Message for a first-time issue (fluff included!)
+issue-message: |
+  # 👋 Welcome, @${{ github.actor }}! 
+  
+  Thank you so much for opening your very first issue here in the **${{ github.repository }}** repository! 🚀
+  
+  We appreciate you taking the time to report this and help us improve our project. We're thrilled to have you as part of our community!
+  
+  A maintainer will review this issue as soon as possible and provide feedback. In the meantime, feel free to explore our [contribution guidelines](CONTRIBUTING.md) if you're interested in helping out further.
+  
+  Thanks again for your valuable contribution! :heart:
+
+# Label to apply to first-time issues
+issue-label: "first-time-contributor"
+
+# Message for a first-time pull request (extra fluff!)
+pr-message: |
+  # 🎉 A huge welcome, @${{ github.actor }}! 
+  
+  Congratulations on opening your first ever Pull Request with **${{ github.repository }}**! We're absolutely delighted to see your contribution.
+  
+  We truly appreciate the effort you've put into making this project better. Your support means a lot to us!
+  
+  Our team will start the review process shortly. Please be patient as we work through our review queue. 
+  
+  If you have any questions during the review process, don't hesitate to ask right here in the comments.
+  
+  Thanks again, and happy coding! :sparkles:
+
+# Label to apply to first-time pull requests
+pr-label: "first-time-contributor"

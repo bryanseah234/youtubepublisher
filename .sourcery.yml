@@ -1,0 +1,4 @@
+# .github/.sourcery.yaml
+# Sourcery configuration file
+# All basic analyzers are enabled by default for public repositories.
+# This file serves to acknowledge Sourcery configuration location.
