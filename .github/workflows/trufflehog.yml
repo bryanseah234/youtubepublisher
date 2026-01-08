@@ -3,9 +3,9 @@ name: TruffleHog Secret Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   trufflehog:
@@ -20,10 +20,8 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
           extra_args: --only-verified
 
       - name: Check for secrets
         if: failure()
-        run: echo "TruffleHog detected secrets. Please review and remove them." && exit 1
+        run: echo "TruffleHog detected secrets or encountered a configuration error." && exit 1
