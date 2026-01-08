@@ -6,6 +6,8 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  schedule:
+    - cron: "0 15 * * *" # Daily at 11 PM SGT (15:00 UTC)
 
 jobs:
   trufflehog:
