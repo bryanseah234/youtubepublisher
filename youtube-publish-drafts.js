@@ -83,6 +83,8 @@
   const RADIO_BUTTON_SELECTOR = 'tp-yt-paper-radio-button'
   const VISIBILITY_STEPPER_SELECTOR = '#step-badge-3'
   const VISIBILITY_PAPER_BUTTONS_SELECTOR = 'tp-yt-paper-radio-group'
+  const NEXT_BUTTON_SELECTOR = '#next-button'
+  const CHECKS_STEPPER_SELECTOR = '#step-badge-2'
   const SAVE_BUTTON_SELECTOR = '#done-button'
   const SUCCESS_ELEMENT_SELECTOR = 'ytcp-video-thumbnail-with-info'
   const DIALOG_SELECTOR = 'ytcp-dialog.ytcp-video-share-dialog > tp-yt-paper-dialog:nth-child(1)'
@@ -171,10 +173,36 @@
       return await waitForElement(VISIBILITY_STEPPER_SELECTOR, this.raw)
     }
 
+    async clickNextButton () {
+      const nextButton = await waitForElement(NEXT_BUTTON_SELECTOR, this.raw, 2000)
+      if (nextButton !== null) {
+        click(nextButton)
+        debugLog('clicked Next button (intermediate step)')
+        await sleep(500)
+        return true
+      }
+      return false
+    }
+
     async goToVisibility () {
       debugLog('going to Visibility')
       await sleep(50)
+      // Try clicking the visibility stepper directly
       click(await this.visibilityStepper())
+      await sleep(200)
+      // Check if we landed on visibility (radio group visible)
+      const radioGroup = this.raw.querySelector(VISIBILITY_PAPER_BUTTONS_SELECTOR)
+      if (radioGroup === null) {
+        // Visibility stepper click did not work - likely blocked by Checks step
+        // (e.g., copyright warning). Navigate through intermediate steps via Next.
+        debugLog('Visibility not reached directly, clicking through intermediate steps')
+        for (let i = 0; i < 5; i++) {
+          const landed = this.raw.querySelector(VISIBILITY_PAPER_BUTTONS_SELECTOR)
+          if (landed !== null) break
+          const clicked = await this.clickNextButton()
+          if (!clicked) break
+        }
+      }
       const visibility = new VisibilityModal(this.raw)
       await sleep(50)
       await waitForElement(VISIBILITY_PAPER_BUTTONS_SELECTOR, visibility.raw)
