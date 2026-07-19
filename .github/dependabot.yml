@@ -1,127 +1,18 @@
 version: 2
 updates:
-  # .NET SDK (global.json file)
-  - package-ecosystem: "dotnet-sdk"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Bun (bun.lockb, package.json files)
-  - package-ecosystem: "bun"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Bundler (Gemfile, Gemfile.lock files)
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Cargo (Cargo.toml, Cargo.lock files)
-  - package-ecosystem: "cargo"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Composer (composer.json, composer.lock files)
-  - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Conda (environment.yml file)
-  - package-ecosystem: "conda"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Dev containers (.devcontainer.json file)
-  - package-ecosystem: "devcontainers"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Docker (Dockerfile)
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Docker Compose (docker-compose.yml file)
-  - package-ecosystem: "docker-compose"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # GitHub Actions workflows (.github/workflows/*.yml files)
+  # Conservative shared default.
+  #
+  # Language package ecosystems are intentionally not synced from sourcerepo:
+  # Dependabot has no manifest-aware conditionals in this file, so a global
+  # all-ecosystems template creates duplicate PRs and false CI failures in
+  # repos that do not use those ecosystems. Add npm, bun, pip, etc. directly
+  # in a target repo only when that repo actually owns the matching manifest.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
       time: "15:00"
-
-  # Go modules (go.mod file)
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Gradle (build.gradle, build.gradle.kts files)
-  - package-ecosystem: "gradle"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Helm (Chart.yaml, values.yaml files)
-  - package-ecosystem: "helm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Maven (pom.xml file)
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # npm (package.json, package-lock.json files)
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # NuGet (.nuspec, .csproj, etc. files)
-  - package-ecosystem: "nuget"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # pip (requirements.txt, Pipfile, setup.py files)
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
-
-  # Terraform (.tf files)
-  - package-ecosystem: "terraform"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "15:00"
+    labels:
+      - "dependencies"
+      - "github-actions"
