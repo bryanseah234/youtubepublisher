@@ -1,2 +1,11 @@
 *.log
 .log
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.next/
+__pycache__/
+.pytest_cache/
