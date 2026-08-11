@@ -1,4 +1,8 @@
 # youtube-publisher
+
+
+![Project screenshot](./screenshot.png)
+
 code to publish all your draft videos without clicking using javascript.
 
 ## Project Status
